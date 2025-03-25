@@ -2,7 +2,16 @@
 # Copyright (C) 2024 The Android Open Source Project
 #
 # SPDX-License-Identifier: Apache-2.0
-#
+#ofrp support
+##Define hardware platform
+PRODUCT_RELEASE_NAME := (a15)
+
+##Device path for OEM device tree
+DEVICE_PATH := (device/samsung/a15)
+
+##Inherit any OrangeFox-specific settings
+$(call inherit-product-if-exists, $(DEVICE_PATH)/fox_$(PRODUCT_RELEASE_NAME).mk)
+
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
